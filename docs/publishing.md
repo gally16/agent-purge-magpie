@@ -3,7 +3,10 @@
 三种安装方式对应三件一次性的事：npm 包、GitHub 仓库、magpie 推荐列表。全部做完之后，
 用户装这个插件最多点一下。
 
-## 1. 建仓库并推上去
+## 1. 仓库（已完成）
+
+仓库已在 <https://github.com/gally16/agent-purge-magpie>，`main` 与 `v0.1.0` 都已推上去。
+换一台机器或重建仓库时，步骤是：
 
 ```bash
 cd agent-purge-magpie
@@ -11,7 +14,7 @@ git init -b main
 git add -A
 git commit -m "agent-purge magpie plugin 0.1.0"
 git remote add origin git@github.com:gally16/agent-purge-magpie.git
-git push -u origin main
+git push -u origin main && git push origin --tags
 ```
 
 `package.json` 就在仓库根目录，这是 `magpie plugin add github:gally16/agent-purge-magpie`
