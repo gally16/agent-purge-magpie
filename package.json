@@ -6,11 +6,11 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ZiChuanLan/agent-purge-magpie.git"
+		"url": "git+https://github.com/gally16/agent-purge-magpie.git"
 	},
-	"homepage": "https://github.com/ZiChuanLan/agent-purge-magpie#readme",
+	"homepage": "https://github.com/gally16/agent-purge-magpie#readme",
 	"bugs": {
-		"url": "https://github.com/ZiChuanLan/agent-purge-magpie/issues"
+		"url": "https://github.com/gally16/agent-purge-magpie/issues"
 	},
 	"keywords": [
 		"magpie",

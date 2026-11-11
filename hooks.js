@@ -7,7 +7,7 @@
 //
 // 三种装法，都不需要克隆仓库：
 //   magpie plugin add agent-purge-magpie
-//   magpie plugin add github:ZiChuanLan/agent-purge-magpie
+//   magpie plugin add github:gally16/agent-purge-magpie
 //   magpie → 插件 → 发现 → 推荐列表里点一下
 //
 // 模式与 agent-purge 一致：

@@ -10,11 +10,11 @@ cd agent-purge-magpie
 git init -b main
 git add -A
 git commit -m "agent-purge magpie plugin 0.1.0"
-git remote add origin git@github.com:ZiChuanLan/agent-purge-magpie.git
+git remote add origin git@github.com:gally16/agent-purge-magpie.git
 git push -u origin main
 ```
 
-`package.json` 就在仓库根目录，这是 `magpie plugin add github:ZiChuanLan/agent-purge-magpie`
+`package.json` 就在仓库根目录，这是 `magpie plugin add github:gally16/agent-purge-magpie`
 能工作的前提——magpie 只读仓库根目录的 `package.json`，不看子目录。同理，`hooks.js`、
 `page/`、`personas/` 都是提交进仓库的源码，没有构建步骤：GitHub 安装直接跑这些文件。
 

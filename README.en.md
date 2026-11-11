@@ -8,7 +8,7 @@ OpenCode, pi — whoever goes through magpie gets the same persona.
 
 ```bash
 magpie plugin add agent-purge-magpie                      # from npm
-magpie plugin add github:ZiChuanLan/agent-purge-magpie    # straight from GitHub
+magpie plugin add github:gally16/agent-purge-magpie    # straight from GitHub
 ```
 
 Or open magpie → Plugins → Discover and pick **agent-purge** from the recommended list.

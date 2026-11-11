@@ -76,6 +76,8 @@ assert.equal(entry.community, undefined, "第三方包不写 community 标记");
 assert.equal(entry.providers, undefined, "中间件不声明 providers");
 assert.deepEqual(entry.summary, pkg.magpie.summary, "注册表摘要与包里的摘要必须一致");
 assert.ok(entry.icon.startsWith("https://"), "注册表图标用仓库里的 SVG 地址");
+const owner = new URL(pkg.repository.url.replace(/^git\+/, "")).pathname.split("/")[1];
+assert.ok(entry.icon.includes(`/${owner}/`), `注册表图标必须和 repository 指向同一个仓库所有者（${owner}）`);
 
 // 6) 生成物不进版本库，也不进 npm 包：里面是本机人设的名字和说明
 assert.match(readFileSync(join(root, ".gitignore"), "utf8"), /^page\/personas\.js$/m, "清单是生成物，必须忽略");
