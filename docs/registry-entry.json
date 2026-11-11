@@ -1,0 +1,10 @@
+{
+	"package": "agent-purge-magpie",
+	"name": "agent-purge",
+	"kind": "middleware",
+	"icon": "https://raw.githubusercontent.com/ZiChuanLan/agent-purge-magpie/main/icon.svg",
+	"summary": {
+		"en": "Rewrite the system prompt of every request behind Magpie with your agent-purge persona: four agent APIs, four modes, per-agent scoping and a visual persona page. Built-in personas or .md imports work without the CLI.",
+		"zh": "把 agent-purge 当前的人设与模式写进每次经过 magpie 网关的请求：四种 agent API、四种模式、按 Agent 限定范围，带可视化人设页；不装 CLI 也能用内置人设或导入 .md。"
+	}
+}

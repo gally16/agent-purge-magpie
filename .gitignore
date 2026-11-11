@@ -1,0 +1,8 @@
+node_modules/
+out/
+*.tgz
+*.log
+.DS_Store
+
+# 插件页的人设清单：钩子启动时按本机人设生成，不进版本库
+page/personas.js

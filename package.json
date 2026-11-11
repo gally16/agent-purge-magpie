@@ -1,0 +1,63 @@
+{
+	"name": "agent-purge-magpie",
+	"version": "0.1.0",
+	"description": "把 agent-purge 当前的人设与模式写进每次经过 magpie 网关的 agent 请求（system 段）",
+	"type": "module",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ZiChuanLan/agent-purge-magpie.git"
+	},
+	"homepage": "https://github.com/ZiChuanLan/agent-purge-magpie#readme",
+	"bugs": {
+		"url": "https://github.com/ZiChuanLan/agent-purge-magpie/issues"
+	},
+	"keywords": [
+		"magpie",
+		"magpie-plugin",
+		"opencode",
+		"opencode-plugin",
+		"agent-purge",
+		"persona",
+		"system-prompt",
+		"gateway",
+		"middleware"
+	],
+	"engines": {
+		"node": ">=20"
+	},
+	"files": [
+		"hooks.js",
+		"lib/catalog.mjs",
+		"page/index.html",
+		"page/app.js",
+		"page/style.css",
+		"personas",
+		"scripts/gen-personas.mjs",
+		"icon.svg",
+		"README.md",
+		"README.en.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"test": "node scripts/test.mjs",
+		"personas": "node scripts/gen-personas.mjs",
+		"prepublishOnly": "node scripts/test.mjs"
+	},
+	"magpie": {
+		"name": "agent-purge",
+		"icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9ImFnZW50LXB1cmdlIj4KCTxkZWZzPgoJCTxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+CgkJCTxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzQzMzhjYSIvPgoJCTwvbGluZWFyR3JhZGllbnQ+Cgk8L2RlZnM+Cgk8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSIxNSIgZmlsbD0idXJsKCNiZykiLz4KCTxjaXJjbGUgY3g9IjMyIiBjeT0iMjUuNSIgcj0iOS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1kYXNoYXJyYXk9IjUuNSA0LjUiLz4KCTxwYXRoIGQ9Ik0xNS41IDUwLjVjMi4yLTkuMiA4LjYtMTQgMTYuNS0xNHMxNC4zIDQuOCAxNi41IDE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMy42IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCTxwYXRoIGQ9Ik00Mi41IDE4LjVsNS01IiBzdHJva2U9IiNjN2QyZmUiIHN0cm9rZS13aWR0aD0iMy4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==",
+		"hooks": "./hooks.js",
+		"page": {
+			"title": "Persona",
+			"titles": {
+				"zh": "人设"
+			},
+			"file": "page/index.html"
+		},
+		"summary": {
+			"en": "Rewrite the system prompt of every request behind Magpie with your agent-purge persona: four agent APIs, four modes, per-agent scoping and a visual persona page. Built-in personas or .md imports work without the CLI.",
+			"zh": "把 agent-purge 当前的人设与模式写进每次经过 magpie 网关的请求：四种 agent API、四种模式、按 Agent 限定范围，带可视化人设页；不装 CLI 也能用内置人设或导入 .md。"
+		}
+	}
+}
