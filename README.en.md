@@ -7,9 +7,20 @@ OpenCode, pi — whoever goes through magpie gets the same persona.
 ## Install
 
 ```bash
-magpie plugin add agent-purge-magpie                      # from npm
-magpie plugin add github:gally16/agent-purge-magpie    # straight from GitHub
+magpie plugin add github:gally16/agent-purge-magpie    # from GitHub, works as soon as it is pushed
+magpie plugin add agent-purge-magpie                   # from npm, once the package is published
 ```
+
+Behind the npm mirror? `npmmirror` may not have a freshly published package yet (404). Point magpie
+at the official registry for the install, then switch back:
+
+```bash
+magpie plugin registry https://registry.npmjs.org
+magpie plugin add agent-purge-magpie
+magpie plugin registry default
+```
+
+The GitHub spec does not touch npm or any mirror.
 
 Or open magpie → Plugins → Discover and pick **agent-purge** from the recommended list.
 

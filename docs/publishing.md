@@ -23,9 +23,18 @@ git push -u origin main && git push origin --tags
 
 ## 2. 发布到 npm
 
+先看一眼源：`npm config get registry`。如果返回 `https://registry.npmmirror.com/`（国内镜像的
+常见默认），**登录和发布都必须显式指回官方源**——镜像是只读的，往上发只会失败：
+
 ```bash
-npm login
-npm publish
+npm login --registry=https://registry.npmjs.org/
+npm run release:npm        # 等于 npm publish --registry=https://registry.npmjs.org/
+```
+
+`release:npm` 已经把 `--registry` 写死，省得被 `~/.npmrc` 带跑偏。发布后确认一下：
+
+```bash
+npm view agent-purge-magpie version --registry=https://registry.npmjs.org/
 ```
 
 `prepublishOnly` 会先跑一遍 `npm test`，测试不过就发不出去。包名 `agent-purge-magpie`
@@ -37,6 +46,17 @@ npm publish
 ```bash
 magpie plugin add agent-purge-magpie
 ```
+
+**镜像同步有延迟。** npmmirror 是按需回源的，刚发布的包可能还是 404，等几分钟或让 magpie
+临时用官方源：
+
+```bash
+magpie plugin registry https://registry.npmjs.org
+magpie plugin add agent-purge-magpie
+magpie plugin registry default
+```
+
+GitHub 安装不经过 npm，也不受镜像影响，是发布前唯一能用的那条路。
 
 ## 3. 打 GitHub topic（可选，但值得）
 

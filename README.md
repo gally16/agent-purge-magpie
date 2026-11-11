@@ -8,17 +8,26 @@ Claude Code、Codex、OpenCode、pi……只要走 magpie，就按同一份人�
 
 ## 安装
 
-三种方式任选其一：
-
 ```bash
-magpie plugin add agent-purge-magpie                      # 1. npm 包名
-magpie plugin add github:gally16/agent-purge-magpie    # 2. GitHub 仓库，不经过 npm
+magpie plugin add github:gally16/agent-purge-magpie    # 1. GitHub，推上去就能装
+magpie plugin add agent-purge-magpie                   # 2. npm，包发布到 npm 之后可用
 ```
 
-3. 在 magpie → 插件 → 发现 → 推荐列表里点一下「agent-purge」。
+3. 在 magpie → 插件 → 发现 → 推荐列表里点一下「agent-purge」（被收录之后）。
 
 装完就能在 `magpie plugin` 里看到它。没有克隆仓库、没有 `gen-personas` 这类前置步骤，
 也没有构建——`hooks.js` 和 `page/` 都是提交进仓库的源码，装完直接跑。
+
+国内网络走 npm 时，镜像（npmmirror）可能还没同步到新包，报 `404 .../agent-purge-magpie`。
+把 magpie 的源临时切到官方源再装：
+
+```bash
+magpie plugin registry https://registry.npmjs.org
+magpie plugin add agent-purge-magpie
+magpie plugin registry default
+```
+
+GitHub 那条不经过 npm，也不受镜像影响。
 
 想钉版本：`magpie plugin add github:gally16/agent-purge-magpie#v0.1.0`。
 
